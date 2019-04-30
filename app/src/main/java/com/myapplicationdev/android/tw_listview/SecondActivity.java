@@ -22,9 +22,6 @@ public class SecondActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_second);
 
-        aa = new ModuleAdapter(this, R.layout.modules_row, modules);
-        lv.setAdapter(aa);
-
         lv = (ListView) this.findViewById(R.id.lvModules);
         tvYear = (TextView) findViewById(R.id.tvYear);
 
@@ -33,6 +30,8 @@ public class SecondActivity extends AppCompatActivity {
         modules.add(new Modules("c200", true));
         modules.add(new Modules("c346", true));
 
+        aa = new ModuleAdapter(this, R.layout.modules_row, modules);
+        lv.setAdapter(aa);
 
         Intent i = getIntent();
         String year = i.getStringExtra("year");
